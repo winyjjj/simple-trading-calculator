@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading Calculator</title>
+    <script>
+        function calculate() {
+            let openingPoint = parseFloat(document.getElementById('openingPoint').value);
+            if (isNaN(openingPoint)) {
+                alert("Please enter a valid opening point");
+                return;
+            }
+            
+            // Buy Stop Calculations
+            let buyEntry = openingPoint + 12.4;
+            let buyTakeProfit = buyEntry + 5;
+            let buyStopLoss = buyEntry - 18;
+            
+            // Sell Stop Calculations
+            let sellEntry = openingPoint - 12.4;
+            let sellTakeProfit = sellEntry - 5;
+            let sellStopLoss = sellEntry + 18;
+
+            document.getElementById('buyEntry').innerText = "Buy Stop - Entry Point: " + buyEntry.toFixed(2);
+            document.getElementById('buyTakeProfit').innerText = "Buy Stop - Take Profit: " + buyTakeProfit.toFixed(2);
+            document.getElementById('buyStopLoss').innerText = "Buy Stop - Stop Loss: " + buyStopLoss.toFixed(2);
+            
+            document.getElementById('sellEntry').innerText = "Sell Stop - Entry Point: " + sellEntry.toFixed(2);
+            document.getElementById('sellTakeProfit').innerText = "Sell Stop - Take Profit: " + sellTakeProfit.toFixed(2);
+            document.getElementById('sellStopLoss').innerText = "Sell Stop - Stop Loss: " + sellStopLoss.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h2>Trading Calculator</h2>
+    <label for="openingPoint">Opening Point:</label>
+    <input type="number" id="openingPoint" step="0.01">
+    <button onclick="calculate()">Calculate</button>
+    
+    <h3>Buy Stop</h3>
+    <p id="buyEntry"></p>
+    <p id="buyTakeProfit"></p>
+    <p id="buyStopLoss"></p>
+    
+    <h3>Sell Stop</h3>
+    <p id="sellEntry"></p>
+    <p id="sellTakeProfit"></p>
+    <p id="sellStopLoss"></p>
+</body>
+</html>

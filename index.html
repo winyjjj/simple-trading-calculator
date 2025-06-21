@@ -12,20 +12,24 @@
             
             // Buy Stop Calculations
             let buyEntry = openingPoint + 12.4;
-            let buyTakeProfit = buyEntry + 5;
+            let buyTakeProfit1 = buyEntry + 2.5;
+            let buyTakeProfit2 = buyEntry + 5;
             let buyStopLoss = buyEntry - 18;
             
             // Sell Stop Calculations
             let sellEntry = openingPoint - 12.4;
-            let sellTakeProfit = sellEntry - 5;
+            let sellTakeProfit1 = sellEntry - 2.5;
+            let sellTakeProfit2 = sellEntry - 5;
             let sellStopLoss = sellEntry + 18;
 
             document.getElementById('buyEntry').innerText = "Buy Stop - Entry Point: " + buyEntry.toFixed(2);
-            document.getElementById('buyTakeProfit').innerText = "Buy Stop - Take Profit: " + buyTakeProfit.toFixed(2);
+            document.getElementById('buyTakeProfit1').innerText = "Buy Stop - Take Profit 1: " + buyTakeProfit1.toFixed(2);
+            document.getElementById('buyTakeProfit2').innerText = "Buy Stop - Take Profit 2: " + buyTakeProfit2.toFixed(2);
             document.getElementById('buyStopLoss').innerText = "Buy Stop - Stop Loss: " + buyStopLoss.toFixed(2);
             
             document.getElementById('sellEntry').innerText = "Sell Stop - Entry Point: " + sellEntry.toFixed(2);
-            document.getElementById('sellTakeProfit').innerText = "Sell Stop - Take Profit: " + sellTakeProfit.toFixed(2);
+            document.getElementById('sellTakeProfit1').innerText = "Sell Stop - Take Profit 1: " + sellTakeProfit1.toFixed(2);
+            document.getElementById('sellTakeProfit2').innerText = "Sell Stop - Take Profit 2: " + sellTakeProfit2.toFixed(2);
             document.getElementById('sellStopLoss').innerText = "Sell Stop - Stop Loss: " + sellStopLoss.toFixed(2);
         }
     </script>
@@ -38,12 +42,14 @@
     
     <h3>Buy Stop</h3>
     <p id="buyEntry"></p>
-    <p id="buyTakeProfit"></p>
+    <p id="buyTakeProfit1"></p>
+    <p id="buyTakeProfit2"></p>
     <p id="buyStopLoss"></p>
     
     <h3>Sell Stop</h3>
     <p id="sellEntry"></p>
-    <p id="sellTakeProfit"></p>
+    <p id="sellTakeProfit1"></p>
+    <p id="sellTakeProfit2"></p>
     <p id="sellStopLoss"></p>
 </body>
 </html>
